@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: "Geist", system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Fira Code", monospace;
+  --bg: #0f0f17;
+  --bg-secondary: #16161f;
+  --bg-card: #1a1a27;
+  --border: #2a2a3e;
+  --brand: #6366f1;
+  --text-muted: #6b7280;
+}
+
+* { box-sizing: border-box; }
+body { background-color: var(--bg); color: #f1f0fb; }
+
+::selection { background: #6366f130; color: #a5b4fc; }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3a54; }
+
+pre, code { font-family: var(--font-mono); }
+
+.gradient-text {
+  background: linear-gradient(135deg, #818cf8, #6366f1, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.prose-dark { color: #d1d5db; }
+.prose-dark h1, .prose-dark h2, .prose-dark h3 { color: #f9fafb; }
+.prose-dark code {
+  background: #1e1e2e;
+  color: #a5b4fc;
+  padding: 0.15em 0.35em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+.prose-dark pre {
+  background: #111120;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-blink { animation: blink 1.2s step-end infinite; }
+.animate-fade-in { animation: fade-in 0.4s ease-out; }
+.animate-slide-up { animation: slide-up 0.3s ease-out; }
